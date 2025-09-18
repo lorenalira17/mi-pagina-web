@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería de Productos</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> 
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ====================== -->
+  <!-- Carrito en la parte superior derecha -->
+  <!-- ====================== -->
+  <nav class="navbar bg-light p-3 shadow-sm">
+    <div class="container-fluid d-flex justify-content-between">
+      <h2 class="mb-0">LIRA'S MAKEUP</h2>
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="cartDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          🛒 Carrito <span id="cartCount" class="badge bg-danger">0</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="cartDropdown" style="min-width: 300px;">
+          <h6>Productos en el carrito:</h6>
+          <ul id="cartList" class="list-group mb-2"></ul>
+          <div class="d-flex justify-content-between">
+            <button id="btnVaciar" class="btn btn-danger btn-sm">Vaciar</button>
+            <button id="btnComprar" class="btn btn-success btn-sm">Comprar</button>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-5">
+    <!-- Campo para agregar imágenes -->
+    <div class="input-group mb-4">
+      <input type="text" id="imageUrl" class="form-control" placeholder="Ingresa la URL de la imagen">
+      <button id="addImageBtn" class="btn btn-primary">Agregar Imagen</button>
+    </div>
+
+    <!-- Contenedor de la galería dinámica -->
+    <div id="galleryContainer" class="row g-4"></div>
+
+    <!-- Productos de ejemplo -->
+    <div class="row g-4 mt-5">
+      <!-- Card Producto 1 -->
+      <div class="col-md-4">
+        <div id="card1" class="card">
+          <img src="Img_1.jpg" class="card-img-top" alt="Producto 1">
+          <div class="card-body">
+            <h5 class="card-title">Producto 1</h5>
+            <p id="desc1" class="card-text">Precio: $900 MXN<br>Descripción breve del producto 1.</p>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between mt-2">
+          <button class="btn btn-beige btnSelect" data-card="1" data-name="Producto 1" data-price="900">Seleccionar</button>
+          <button class="btn btn-gris btnRemove" data-card="1">Retirar</button>
+        </div>
+      </div>
+
+      <!-- Card Producto 2 -->
+      <div class="col-md-4">
+        <div id="card2" class="card">
+          <img src="Img_2.jpg" class="card-img-top" alt="Producto 2">
+          <div class="card-body">
+            <h5 class="card-title">Producto 2</h5>
+            <p id="desc2" class="card-text">Precio: $1,300 MXN<br>Descripción breve del producto 2.</p>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between mt-2">
+          <button class="btn btn-beige btnSelect" data-card="2" data-name="Producto 2" data-price="1300">Seleccionar</button>
+          <button class="btn btn-gris btnRemove" data-card="2">Retirar</button>
+        </div>
+      </div>
+
+      <!-- Card Producto 3 -->
+      <div class="col-md-4">
+        <div id="card3" class="card">
+          <img src="Img_3.jpg" class="card-img-top" alt="Producto 3">
+          <div class="card-body">
+            <h5 class="card-title">Producto 3</h5>
+            <p id="desc3" class="card-text">Precio: $500 MXN<br>Descripción breve del producto 3.</p>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between mt-2">
+          <button class="btn btn-beige btnSelect" data-card="3" data-name="Producto 3" data-price="500">Seleccionar</button>
+          <button class="btn btn-gris btnRemove" data-card="3">Retirar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lista de tareas -->
+    <div class="mt-5">
+      <h3 class="text-center mb-3">Lista de Tareas</h3>
+      <ul id="taskList" class="list-group mb-3">
+        <li id="task1" class="list-group-item">Tarea 1: Revisar inventario</li>
+        <li id="task2" class="list-group-item">Tarea 2: Subir fotos nuevas</li>
+        <li id="task3" class="list-group-item">Tarea 3: Publicar en redes</li>
+      </ul>
+      <button id="removeFirstBtn" class="btn btn-danger mb-3">Eliminar primera tarea</button>
+      <div class="input-group">
+        <input type="text" id="newTaskInput" class="form-control" placeholder="Escribe una nueva tarea">
+        <button id="addTaskBtn" class="btn btn-success">Agregar tarea</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

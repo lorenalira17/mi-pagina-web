@@ -1,0 +1,29 @@
+body {
+  min-height: 100vh;
+  transition: background 0.3s ease;
+}
+
+/* Colores personalizados para botones */
+.btn-beige {
+  background-color: beige;
+  color: black;
+}
+
+.btn-gris {
+  background-color: gray;
+  color: white;
+}
+
+.btn-azul {
+  background-color: rgb(245, 230, 186);
+  color: white;
+}
+
+.btn-rosa {
+  background-color: rgb(201, 150, 158);
+  color: white;
+}
+.btn-verde {
+  background-color: rgb(150, 201, 158);
+  color: white;
+}
